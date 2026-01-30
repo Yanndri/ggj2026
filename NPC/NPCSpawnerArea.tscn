@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://gbh102ff16d7"]
+
+[ext_resource type="Script" uid="uid://xxydqhr8t61y" path="res://NPC/npc_spawner_area.gd" id="1_xgyg1"]
+
+[node name="NpcSpawnerArea" type="Node2D" unique_id=273963373]
+script = ExtResource("1_xgyg1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=905037742]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=391741928]

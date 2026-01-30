@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://16nsktb2nivx"]
+
+[ext_resource type="Script" uid="uid://ct5h78dh1782j" path="res://NPC/npc.gd" id="1_4ba72"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kppbp"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ba72"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxmj8"]
+radius = 190.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qm8nd"]
+radius = 106.16968
+
+[node name="NPC" type="CharacterBody2D" unique_id=1276164980]
+script = ExtResource("1_4ba72")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=951219259]
+texture = SubResource("CompressedTexture2D_kppbp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=763210711]
+shape = SubResource("RectangleShape2D_4ba72")
+
+[node name="WarningArea" type="Area2D" parent="." unique_id=1142415460]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarningArea" unique_id=1403837539]
+shape = SubResource("CircleShape2D_gxmj8")
+debug_color = Color(0.65532935, 0.515853, 0.1084558, 0.41960785)
+
+[node name="DangerArea" type="Area2D" parent="." unique_id=1798666083]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerArea" unique_id=497913480]
+shape = SubResource("CircleShape2D_qm8nd")
+debug_color = Color(0.9098187, 0.2814493, 0.26394308, 0.41960785)
+
+[node name="DirectionCooldownTimer" type="Timer" parent="." unique_id=1367488061]
+wait_time = 2.5
+autostart = true
+
+[node name="DangerEnteredTimer" type="Timer" parent="." unique_id=608905339]
+one_shot = true
+
+[connection signal="area_entered" from="WarningArea" to="." method="_on_warning_area_area_entered"]
+[connection signal="area_entered" from="DangerArea" to="." method="_on_danger_area_area_entered"]
+[connection signal="area_exited" from="DangerArea" to="." method="_on_danger_area_area_exited"]
+[connection signal="timeout" from="DirectionCooldownTimer" to="." method="_on_direction_cooldown_timer_timeout"]
+[connection signal="timeout" from="DangerEnteredTimer" to="." method="_on_on_danger_entered_timer_timeout"]

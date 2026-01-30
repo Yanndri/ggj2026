@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cjqtcf48l2w6c"]
+
+[ext_resource type="PackedScene" uid="uid://16nsktb2nivx" path="res://NPC/NPC.tscn" id="1_gciqn"]
+[ext_resource type="PackedScene" uid="uid://gbh102ff16d7" path="res://NPC/NPCSpawnerArea.tscn" id="1_sk47g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ask4l"]
+size = Vector2(663, 378)
+
+[node name="TestArea" type="Node2D" unique_id=503385021]
+
+[node name="NpcSpawnerArea" parent="." unique_id=273963373 instance=ExtResource("1_sk47g")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=12367968]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1745616386]
+position = Vector2(307, 172)
+shape = SubResource("RectangleShape2D_ask4l")
+
+[node name="NPC" parent="." unique_id=1276164980 instance=ExtResource("1_gciqn")]
+position = Vector2(391, 182)
+scale = Vector2(0.5, 0.5)
+
+[node name="NPC2" parent="." unique_id=1624658937 instance=ExtResource("1_gciqn")]
+position = Vector2(77, 105)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=480983997]
+position = Vector2(307, 172)

@@ -1,9 +1,19 @@
+<<<<<<< HEAD
 res://Theme/
 res://Scripts/
 res://
 res://addons/Multiplayer/MultiplayerManager/
+=======
+res://Managers/
+res://addons/Multiplayer/MultiplayerManager/
+res://
+>>>>>>> 2dc7a14 (chore: make npc movement)
 res://addons/modded_menu/
 res://addons/modded_settings/
 res://addons/base_button/
 res://Scripts/StateMachine/
+<<<<<<< HEAD
 C:/Users/HP/Documents/Godot Games/mechanics/addons/inputmap/
+=======
+res://Scripts/
+>>>>>>> 2dc7a14 (chore: make npc movement)
