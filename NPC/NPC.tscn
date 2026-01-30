@@ -15,6 +15,7 @@ radius = 190.0
 radius = 106.16968
 
 [node name="NPC" type="CharacterBody2D" unique_id=1276164980]
+input_pickable = true
 script = ExtResource("1_4ba72")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=951219259]
@@ -46,6 +47,9 @@ autostart = true
 [node name="DangerEnteredTimer" type="Timer" parent="." unique_id=608905339]
 one_shot = true
 
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="area_entered" from="WarningArea" to="." method="_on_warning_area_area_entered"]
 [connection signal="area_entered" from="DangerArea" to="." method="_on_danger_area_area_entered"]
 [connection signal="area_exited" from="DangerArea" to="." method="_on_danger_area_area_exited"]

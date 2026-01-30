@@ -13,6 +13,7 @@ size = Vector2(663, 378)
 [node name="Area2D" type="Area2D" parent="." unique_id=12367968]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1745616386]
+unique_name_in_owner = true
 position = Vector2(307, 172)
 shape = SubResource("RectangleShape2D_ask4l")
 
