@@ -1,11 +1,1 @@
-<<<<<<< HEAD
 res://game_scene.tscn
-res://Scripts/Utilities/tween_utility.gd
-res://Scripts/shooter.gd
-res://bullet.tscn
-res://Scripts/bullet.gd
-res://Theme/MainTheme.tres
-=======
-res://NPC/test_area.tscn
-res://NPC/npc.gd
->>>>>>> 2dc7a14 (chore: make npc movement)
