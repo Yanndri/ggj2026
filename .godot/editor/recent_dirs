@@ -1,8 +1,9 @@
-res://addons/Multiplayer/MultiplayerManager
+res://Theme/
+res://Scripts/
 res://
-res://addons/modded_menu
-res://addons/modded_settings
-res://addons/base_button
-res://Scripts/StateMachine
-C:/Users/HP/Documents/Godot Games/mechanics/addons/inputmap
-res://Scripts
+res://addons/Multiplayer/MultiplayerManager/
+res://addons/modded_menu/
+res://addons/modded_settings/
+res://addons/base_button/
+res://Scripts/StateMachine/
+C:/Users/HP/Documents/Godot Games/mechanics/addons/inputmap/

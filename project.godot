@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Mechanics"
-run/main_scene="uid://dqabn7rel530k"
+run/main_scene="uid://c31ubc02o2ih6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1280
+window/size/viewport_height=760
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
