@@ -1,3 +1,4 @@
+TileMap
 SubViewport
 SubViewportContainer
 Camera3D
@@ -11,4 +12,3 @@ Label
 TextureProgressBar
 Control
 RigidBody2D
-CharacterBody2D
