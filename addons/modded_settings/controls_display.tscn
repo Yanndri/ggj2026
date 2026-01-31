@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://g2eiwddqhqyc"]
+[gd_scene format=3 uid="uid://g2eiwddqhqyc"]
 
 [sub_resource type="GDScript" id="GDScript_l4u1r"]
 resource_name = "ControlsDisplay"
@@ -21,7 +21,7 @@ func instantiate_input_map():
 			if input_event is InputEventKey:
 				input_event_key = input_event
 		
-		print(name, \": action: \", action, \" input_event_key: \", input_event_key)
+		#print(name, \": action: \", action, \" input_event_key: \", input_event_key)
 		if input_event_key.physical_keycode: #Physical is when you set it manually in Project Settings
 			input_remap.update_input_remap(action, input_event_key.as_text_physical_keycode())
 		else: #if not a physical keycode then you used a script to assign a value

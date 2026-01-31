@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://87rcr42t3lty"
-path.s3tc="res://.godot/imported/H_PJ_26_metallicRoughness.png-d378d14bdcdafb9a63dc64b56adf888c.s3tc.ctex"
+uid="uid://din8bse540mx8"
+path="res://.godot/imported/Cannon.png-bb61996820da81664fcebc1af375b76a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/hpj_26_76mm_naval_gun/textures/H_PJ_26_metallicRoughness.png"
-dest_files=["res://.godot/imported/H_PJ_26_metallicRoughness.png-d378d14bdcdafb9a63dc64b56adf888c.s3tc.ctex"]
+source_file="res://Art/Aseprite/Cannon.png"
+dest_files=["res://.godot/imported/Cannon.png-bb61996820da81664fcebc1af375b76a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

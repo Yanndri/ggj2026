@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dki03i8olqgg1"
-path.s3tc="res://.godot/imported/H_PJ_26_baseColor.png-69637a6bf030e1331113dd0cd0a5990e.s3tc.ctex"
+uid="uid://4l07c8et1j0"
+path="res://.godot/imported/mask_bullet2.png-b954537a92063c8da6f372b5d862c316.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/hpj_26_76mm_naval_gun/textures/H_PJ_26_baseColor.png"
-dest_files=["res://.godot/imported/H_PJ_26_baseColor.png-69637a6bf030e1331113dd0cd0a5990e.s3tc.ctex"]
+source_file="res://Art/Aseprite/mask_bullet2.png"
+dest_files=["res://.godot/imported/mask_bullet2.png-b954537a92063c8da6f372b5d862c316.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -1,20 +1,18 @@
 extends RigidBody2D
 
-@export var speed : float = 2000
+var trail : Line2D
 
 func _ready() -> void:
-	#velocity = Vector2.RIGHT.rotated(rotation) * SPEED
-	linear_velocity = Vector2.RIGHT.rotated(rotation) * speed
-
-	start_lifespan(2)
+	$bullet_particles.rotation = rotation
+	start_lifespan(4)
 
 func start_lifespan(lifespan : float):
 	await get_tree().create_timer(lifespan).timeout
 	self.queue_free()
-func _on_bullet_area_body_entered(body: Node2D) -> void:
 	
+func _on_bullet_area_body_entered(body: Node2D) -> void:
 	body.queue_free()
 	self.queue_free()
 
-func _physics_process(delta: float) -> void:
-	rotation += 1
+#func _physics_process(delta: float) -> void:
+	#rotation += 0.1

@@ -1,32 +1,46 @@
 [gd_scene format=3 uid="uid://bxpbs6nppon8i"]
 
-[ext_resource type="Texture2D" uid="uid://dtd6ru0ga5e3x" path="res://icon.svg" id="1_v7oki"]
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="2_v8qja"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_v8qja"]
+[ext_resource type="Texture2D" uid="uid://4l07c8et1j0" path="res://Art/Aseprite/mask_bullet2.png" id="2_t4vbm"]
+[ext_resource type="Script" uid="uid://clulkg5qqh6b8" path="res://Scripts/bullet.gd" id="2_v8qja"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t4vbm"]
-radius = 14.142136
+radius = 17.029387
+
+[sub_resource type="Curve" id="Curve_v8qja"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_t4vbm"]
+colors = PackedColorArray(0.4862745, 1, 1, 0.68235296, 1, 1, 1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8qja"]
 
 [node name="Bullet" type="RigidBody2D" unique_id=917304655]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("2_v8qja")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1331416852]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_v7oki")
-
-[node name="redacted" type="CollisionShape2D" parent="." unique_id=1173256910]
-visible = false
-scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("CircleShape2D_v8qja")
-
 [node name="bullet_area" type="Area2D" parent="." unique_id=1970448448]
+position = Vector2(0, 3)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_area" unique_id=1869252631]
 shape = SubResource("CircleShape2D_t4vbm")
 debug_color = Color(0.44301564, 0.99999994, 0.6154387, 0.41960785)
+
+[node name="bullet_particles" type="CPUParticles2D" parent="." unique_id=1425584169]
+position = Vector2(0, 8)
+texture = ExtResource("2_t4vbm")
+lifetime = 0.4
+scale_amount_curve = SubResource("Curve_v8qja")
+color_ramp = SubResource("Gradient_t4vbm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1331416852]
+texture = ExtResource("2_t4vbm")
+
+[node name="redacted" type="CollisionShape2D" parent="." unique_id=1173256910]
+visible = false
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_v8qja")
 
 [connection signal="body_entered" from="bullet_area" to="." method="_on_bullet_area_body_entered"]

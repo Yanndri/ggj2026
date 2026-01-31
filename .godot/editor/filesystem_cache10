@@ -1,9 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1769857637
+::res://::1769871123
 3dTest.tscn::PackedScene::8018382860773104699::1768396651::0::1::::<><><>0<>0<><>::
-bullet.tscn::PackedScene::4031824263970251806::1769855494::0::1::::<><><>0<>0<><>::uid://dtd6ru0ga5e3x::::res://icon.svg<>res://Scripts/bullet.gd
+bullet.tscn::PackedScene::4031824263970251806::1769868220::0::1::::<><><>0<>0<><>::uid://4l07c8et1j0::::res://Art/Aseprite/mask_bullet2.png<>uid://clulkg5qqh6b8::::res://Scripts/bullet.gd
 default_bus_layout.tres::AudioBusLayout::2122355366781513788::1764053728::0::1::::<><><>0<>0<><>::
-game_scene.tscn::PackedScene::6793019081419243781::1769857174::0::1::::<><><>0<>0<><>::uid://087uhgyy0fin::::res://Art/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Ground.png<>uid://dtd6ru0ga5e3x::::res://icon.svg<>uid://bnrir4pg35evx::::res://Scripts/game_scene.gd<>uid://baeeko6o2cvlj::::res://Art/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Road.png<>uid://baibw7t27hkdx::::res://Scripts/shooter.gd<>uid://dawu3do6rsk1f::::res://Art/The Fan-tasy Tileset (Free)/Tiled/Tilemaps/Beginning Fields.png<>uid://bxpbs6nppon8i::::res://bullet.tscn<>uid://cxcisb3oec71x::::res://Theme/MainTheme.tres<>uid://bpecia17xgykd::::res://addons/base_button/base_button.tscn<>uid://b4h2xfcdopbp6::::res://Art/Fonts/Noto_Sans_Symbols/static/NotoSansSymbols-ExtraBold.ttf<>uid://cyfa1jrf5xwvt::::res://addons/base_button/click.wav<>uid://v5y7slqc7hfb::::res://addons/modded_settings/settings.gd<>uid://if3beq2j1w0n::::res://Scenes/cannon.tscn
+game_scene.tscn::PackedScene::6793019081419243781::1769870432::0::1::::<><><>0<>0<><>::uid://dtd6ru0ga5e3x::::res://icon.svg<>uid://bnrir4pg35evx::::res://Scripts/game_scene.gd<>uid://l537cd30wow2::::res://Art/Aseprite/worldmap.png<>uid://baibw7t27hkdx::::res://Scripts/shooter.gd<>uid://bxpbs6nppon8i::::res://bullet.tscn<>uid://ciin86dlv4qcf::::res://Art/Aseprite/cannon_under.png<>uid://din8bse540mx8::::res://Art/Aseprite/Cannon.png<>uid://cxcisb3oec71x::::res://Theme/MainTheme.tres<>uid://bpecia17xgykd::::res://addons/base_button/base_button.tscn<>uid://b4h2xfcdopbp6::::res://Art/Fonts/Noto_Sans_Symbols/static/NotoSansSymbols-ExtraBold.ttf<>uid://cyfa1jrf5xwvt::::res://addons/base_button/click.wav<>uid://v5y7slqc7hfb::::res://addons/modded_settings/settings.gd<>uid://dywio87myr8sh::::res://Assets/PixelClique/BaristaGirl/BaristaGirlMovement&Gestures.png
 icon.svg::CompressedTexture2D::8500956888097151951::1762704016::1762704031::1::::<><><>0<>0<>4954b1c0c79609cda8a56fb5d8d9a5e6<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 main.tscn::PackedScene::3721594180621949202::1768397665::0::1::::<><><>0<>0<><>::uid://dk2874y5scwfs::::res://Art/brackeys_platformer_assets/sprites/knight.png<>uid://ddp3dvd7x1ty5::::res://Scripts/StateMachine/player.gd<>uid://c6ev8rgf606e8::::res://Art/brackeys_platformer_assets/sprites/world_tileset.png<>uid://dtcm5gftx5qb3::::res://addons/modded_settings/settings.tscn<>uid://bcnrjxjhqst4i::::res://addons/modded_menu/MainMenu.tscn<>uid://dmifug6c7iqfr::::res://3dTest.tscn
 README.md::TextFile::-1::1769783092::0::1::::<><><>0<>0<><>::
@@ -18,8 +18,8 @@ InputMaps.gd::GDScript::8832430141497617985::1764006859::0::1::::<>EditorPlugin<
 plugin.cfg::TextFile::-1::1762922938::0::1::::<><><>0<>0<><>::
 ::res://addons/modded_menu/::1769783145
 MainMenu.tscn::PackedScene::2554684765074569694::1764089972::0::1::::<><><>0<>0<><>::uid://bpecia17xgykd::::res://addons/base_button/base_button.tscn
-::res://addons/modded_settings/::1769783145
-controls_display.tscn::PackedScene::477129575816211786::1764087687::0::1::::<><><>0<>0<><>::
+::res://addons/modded_settings/::1769870448
+controls_display.tscn::PackedScene::477129575816211786::1769870448::0::1::::<><><>0<>0<><>::
 input_remap.gd::GDScript::3630215127534658270::1764069105::0::1::::<>HBoxContainer<><>0<>0<><>::
 input_remap.tscn::PackedScene::2163015832750164732::1764087808::0::1::::<><><>0<>0<><>::uid://bryrd3mj31kw1::::res://addons/modded_settings/input_remap.gd
 input_remap_button_group.tres::ButtonGroup::8761622741210108855::1764066015::0::1::::<><><>0<>0<><>::
@@ -45,7 +45,15 @@ _NodeTunnelTCP.gd::GDScript::1502344483536952206::1768397419::0::1::::_NodeTunne
 _NodeTunnelUDP.gd::GDScript::7047999489300600496::1768397419::0::1::::_NodeTunnelUDP<>RefCounted<><>0<>0<><>::
 _PacketManager.gd::GDScript::9105317269908777571::1768397419::0::1::::_PacketManager<>RefCounted<><>0<>0<><>::
 ByteUtils.gd::GDScript::3363711320459425692::1768397418::0::1::::ByteUtils<>RefCounted<><>0<>0<><>::
-::res://Art/::1769856600
+::res://Art/::1769861433
+::res://Art/Aseprite/::1769868135
+Cannon.png::CompressedTexture2D::7749616110543871543::1769861882::1769861884::1::::<><><>0<>0<>c42a0313b7c2d0fb1d474e1f105ce86d<>res://.godot/imported/Cannon.png-bb61996820da81664fcebc1af375b76a.ctex::
+cannon_under.png::CompressedTexture2D::5351717024015043809::1769862171::1769862173::1::::<><><>0<>0<>9e63be22eba6ab33a8be4c68e2923817<>res://.godot/imported/cannon_under.png-0c1f2282836d583b63ea691e66608da2.ctex::
+Flags.png::CompressedTexture2D::3348617397233158936::1769862790::1769862791::1::::<><><>0<>0<>1f040fdc2e1cb282855896e487c3fd70<>res://.godot/imported/Flags.png-c95d77de70788ed6ddddde04f3d1d1e9.ctex::
+grandstand.png::CompressedTexture2D::5052258223186696545::1769863718::1769863719::1::::<><><>0<>0<>ba14315a37496add81167a41801323b1<>res://.godot/imported/grandstand.png-d7827aa1ecfd29ddcbdbd46fb06f76bb.ctex::
+mask_bullet2.png::CompressedTexture2D::60581171978091947::1769868134::1769868135::1::::<><><>0<>0<>c6cb471070efd384b2d78e96b6ee81ac<>res://.godot/imported/mask_bullet2.png-b954537a92063c8da6f372b5d862c316.ctex::
+mask_bullet.png::CompressedTexture2D::2788238644704092534::1769867800::1769867802::1::::<><><>0<>0<>8d81c9f23ab3e5ad351f3f852159e5ee<>res://.godot/imported/mask_bullet.png-c9ec697a769d2cc0b82e52604db95ebd.ctex::
+worldmap.png::CompressedTexture2D::835765944830162623::1769866458::1769866459::1::::<><><>0<>0<>9f4fd14feba90560ad22175544d88e9c<>res://.godot/imported/worldmap.png-996f35c1e389a9355ae3e7ca5a3be4fe.ctex::
 ::res://Art/brackeys_platformer_assets/::1769783146
 LICENSE & CREDITS.txt::TextFile::-1::1762715263::0::1::::<><><>0<>0<><>::
 ::res://Art/brackeys_platformer_assets/fonts/::1769783146
@@ -107,12 +115,6 @@ zenitha-classic_poster05.png::CompressedTexture2D::8526271485372665776::17690721
 zenitha-classic_poster06.png::CompressedTexture2D::2588401385741972501::1769072111::1769788210::1::::<><><>0<>0<>f837a208ea08e434413eaefc0889b135<>res://.godot/imported/zenitha-classic_poster06.png-f9a466de5ced8ea968738f0a9d21835e.ctex::
 zenitha-classic_poster07.png::CompressedTexture2D::8095445242004694912::1769072111::1769788210::1::::<><><>0<>0<>9540bbff03293ac2b3023a36f97243b2<>res://.godot/imported/zenitha-classic_poster07.png-2e9d498304343ab363dfeed8d27980fd.ctex::
 zenitha-classic_poster08.png::CompressedTexture2D::8820245567119823225::1769072111::1769788210::1::::<><><>0<>0<>dd2e4ec91424b503a982d35ed8ec0468<>res://.godot/imported/zenitha-classic_poster08.png-6fa9251611bb1eef47866cf17e2a3dc3.ctex::
-::res://Art/hpj_26_76mm_naval_gun/::1769856611
-license.txt::TextFile::-1::1769856591::0::1::::<><><>0<>0<><>::
-scene.gltf::PackedScene::808075630231571624::1769856591::1769856611::1::::<><><>0<>0<>a4bc1e770c82cc9d98ea6e7e4dc42a2c<>res://.godot/imported/scene.gltf-29bcb4944b50dd3d7a39838e86aff61b.scn::uid://dki03i8olqgg1::::res://Art/hpj_26_76mm_naval_gun/textures/H_PJ_26_baseColor.png<>uid://87rcr42t3lty::::res://Art/hpj_26_76mm_naval_gun/textures/H_PJ_26_metallicRoughness.png
-::res://Art/hpj_26_76mm_naval_gun/textures/::1769856612
-H_PJ_26_baseColor.png::CompressedTexture2D::7879233908357382446::1769856591::1769856612::1::::<><><>0<>0<>bc4e9a0c4af7cc43fd21c98c0c4e5b3e<>res://.godot/imported/H_PJ_26_baseColor.png-69637a6bf030e1331113dd0cd0a5990e.s3tc.ctex::
-H_PJ_26_metallicRoughness.png::CompressedTexture2D::2383328627599362426::1769856591::1769856612::1::::<><><>0<>0<>12bc1f5f7451e2186def866e43c7d3b5<>res://.godot/imported/H_PJ_26_metallicRoughness.png-d378d14bdcdafb9a63dc64b56adf888c.s3tc.ctex::
 ::res://Art/Music/::1764008196
 ::res://Art/The Fan-tasy Tileset (Free)/::1769793335
 ::res://Art/The Fan-tasy Tileset (Free)/Art/::1769793430
@@ -271,12 +273,12 @@ NPC.tscn::PackedScene::1889727664827769977::1769855494::0::1::::<><><>0<>0<><>::
 NPCSpawnerArea.tscn::PackedScene::423670244201536130::1769797148::0::1::::<><><>0<>0<><>::uid://xxydqhr8t61y::::res://NPC/npc_spawner_area.gd
 npc_spawner_area.gd::GDScript::1663287509230747536::1769797148::0::1::::<>Node2D<><>0<>0<><>::
 test_area.tscn::PackedScene::5438728507575057760::1769855494::0::1::::<><><>0<>0<><>::uid://16nsktb2nivx::::res://NPC/NPC.tscn<>uid://gbh102ff16d7::::res://NPC/NPCSpawnerArea.tscn
-::res://Scenes/::1769857112
-cannon.tscn::PackedScene::573534735516026743::1769857112::0::1::::<><><>0<>0<><>::uid://dki03i8olqgg1::::res://Art/hpj_26_76mm_naval_gun/textures/H_PJ_26_baseColor.png<>uid://87rcr42t3lty::::res://Art/hpj_26_76mm_naval_gun/textures/H_PJ_26_metallicRoughness.png
-::res://Scripts/::1769856138
-bullet.gd::GDScript::5586892309578126455::1769795531::0::1::::<>RigidBody2D<><>0<>0<><>::
-game_scene.gd::GDScript::3334487713905488033::1769856138::0::1::::<>Node2D<><>0<>0<><>::
-shooter.gd::GDScript::2403037421552547965::1769795592::0::1::::<>Sprite2D<><>0<>0<><>::
+::res://Scenes/::1769860971
+main_menu.tscn::PackedScene::6793708117994662635::1769857695::0::1::::<><><>0<>0<><>::uid://cxcisb3oec71x::::res://Theme/MainTheme.tres<>uid://baeeko6o2cvlj::::res://Art/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Road.png<>uid://087uhgyy0fin::::res://Art/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Ground.png<>uid://dawu3do6rsk1f::::res://Art/The Fan-tasy Tileset (Free)/Tiled/Tilemaps/Beginning Fields.png<>uid://bpecia17xgykd::::res://addons/base_button/base_button.tscn
+::res://Scripts/::1769871113
+bullet.gd::GDScript::5586892309578126455::1769870084::0::1::::<>RigidBody2D<><>0<>0<><>::
+game_scene.gd::GDScript::3334487713905488033::1769871113::0::1::::<>Node2D<><>0<>0<><>::
+shooter.gd::GDScript::2403037421552547965::1769870520::0::1::::<>Sprite2D<><>0<>0<><>::
 ::res://Scripts/StateMachine/::1769783147
 falling_state.gd::GDScript::2692907339507999530::1764338609::0::1::::FallingState<>State<><>0<>0<><>::
 idle_state.gd::GDScript::8091752355873225651::1763984167::0::1::::IdleState<>State<><>0<>0<><>::

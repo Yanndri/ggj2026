@@ -1,2 +1,5 @@
 res://game_scene.tscn
-res://Scenes/main_menu.tscn
+res://Scripts/game_scene.gd
+res://Scripts/shooter.gd
+res://bullet.tscn
+res://Scripts/bullet.gd
