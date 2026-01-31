@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c31ubc02o2ih6"]
 
 [ext_resource type="Script" uid="uid://bnrir4pg35evx" path="res://Scripts/game_scene.gd" id="1_ueiaa"]
+[ext_resource type="Shader" uid="uid://lq1t1dj57lbu" path="res://Theme/Shader/clouds_overlay.gdshader" id="2_daj04"]
 [ext_resource type="Texture2D" uid="uid://l537cd30wow2" path="res://Art/Aseprite/worldmap.png" id="2_ueiaa"]
 [ext_resource type="Script" uid="uid://baibw7t27hkdx" path="res://Scripts/shooter.gd" id="2_v1wow"]
 [ext_resource type="PackedScene" uid="uid://bxpbs6nppon8i" path="res://bullet.tscn" id="3_v1wow"]
@@ -12,6 +13,34 @@
 [ext_resource type="AudioStream" uid="uid://cyfa1jrf5xwvt" path="res://addons/base_button/click.wav" id="9_j5hk1"]
 [ext_resource type="Script" uid="uid://v5y7slqc7hfb" path="res://addons/modded_settings/settings.gd" id="10_ueiaa"]
 [ext_resource type="PackedScene" uid="uid://c316m6ovwsluh" path="res://Scenes/main_menu.tscn" id="12_mlphb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mlphb"]
+shader = ExtResource("2_daj04")
+shader_parameter/wind_dir_angle = 0.48
+shader_parameter/wind_speed = 100.0
+shader_parameter/use_wind_gusts = false
+shader_parameter/patch_width_px = 300.0
+shader_parameter/patch_height_px = 5.77
+shader_parameter/pixel_size_px = 1.0
+shader_parameter/rotation_degrees = 0.21
+shader_parameter/threshold = 0.55
+shader_parameter/opacity = 0.86
+
+[sub_resource type="Gradient" id="Gradient_h5hfs"]
+colors = PackedColorArray(2.5027991e-06, 0.7308023, 0.78497225, 0.7490196, 0, 0.6117647, 0.654902, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_snaye"]
+gradient = SubResource("Gradient_h5hfs")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="Gradient" id="Gradient_mlphb"]
+colors = PackedColorArray(0, 0.27919823, 0.30155006, 0.2909957, 0, 0.6117647, 0.654902, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_opqoc"]
+gradient = SubResource("Gradient_mlphb")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
 
 [sub_resource type="Animation" id="Animation_daj04"]
 length = 0.001
@@ -78,6 +107,53 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="Gradient" id="Gradient_opqoc"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.9818653)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bpcsf"]
+gradient = SubResource("Gradient_opqoc")
+width = 120
+height = 32
+
+[sub_resource type="Gradient" id="Gradient_3d2pr"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.0025906735, 0.89896375, 0.9818653)
+colors = PackedColorArray(0.5764706, 0.3529412, 0.3529412, 0, 0.53333336, 0.22352941, 0.19607843, 0.23529412, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h5hfs"]
+gradient = SubResource("Gradient_3d2pr")
+
+[sub_resource type="Gradient" id="Gradient_snaye"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.9818653)
+colors = PackedColorArray(0, 0.7882353, 0.3529412, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1wc4g"]
+gradient = SubResource("Gradient_snaye")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_daj04"]
+gradient = SubResource("Gradient_421uh")
+width = 120
+height = 24
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mlphb"]
+gradient = SubResource("Gradient_btenh")
+width = 120
+height = 24
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 0.3)
+
+[sub_resource type="Gradient" id="Gradient_bpcsf"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.47843137, 0.627451, 0.9843137, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3d2pr"]
+gradient = SubResource("Gradient_bpcsf")
+width = 120
+height = 24
+
 [sub_resource type="GDScript" id="GDScript_blluw"]
 resource_name = "sfx_button"
 script/source = "extends AudioStreamPlayer2D
@@ -88,22 +164,37 @@ func _on_base_button_pressed() -> void:
 "
 
 [sub_resource type="Curve" id="Curve_daj04"]
-_data = [Vector2(0.11155379, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_limits = [0.0, 10.0, 0.0, 1.0]
+_data = [Vector2(0, 10), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_daj04"]
-colors = PackedColorArray(1, 0.8901961, 0, 1, 1, 0, 0, 1)
+colors = PackedColorArray(0, 0.8901961, 1, 0.19215687, 0.22745098, 0.41960785, 1, 1)
 
 [node name="GameScene" type="Node2D" unique_id=2096095640]
 script = ExtResource("1_ueiaa")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=927491301]
+[node name="Background" type="TextureRect" parent="." unique_id=767879693]
 offset_right = 1280.0
 offset_bottom = 760.0
 texture = ExtResource("2_ueiaa")
 
+[node name="CloudOverlayShader" type="TextureRect" parent="." unique_id=927491301]
+material = SubResource("ShaderMaterial_mlphb")
+offset_top = 1.0
+offset_right = 1280.0
+offset_bottom = 90.0
+texture = SubResource("GradientTexture2D_snaye")
+
+[node name="CloudOverlayShader2" type="TextureRect" parent="." unique_id=1490646610]
+material = SubResource("ShaderMaterial_mlphb")
+offset_top = 100.0
+offset_right = 1280.0
+offset_bottom = 756.0
+texture = SubResource("GradientTexture2D_opqoc")
+
 [node name="Cannon" type="Node2D" parent="." unique_id=687507015]
-position = Vector2(640, 736)
+position = Vector2(642, 713)
 scale = Vector2(0.5, 0.5)
 
 [node name="UnderCannon" type="Sprite2D" parent="Cannon" unique_id=910924253]
@@ -117,7 +208,7 @@ script = ExtResource("2_v1wow")
 launcher = NodePath("Launcher")
 bullet_scene = ExtResource("3_v1wow")
 shooter_animations = NodePath("ShooterAnimations")
-cooldown = 1.0
+cooldown = 0.5
 
 [node name="Launcher" type="Marker2D" parent="Cannon/Shooter" unique_id=1307691030]
 position = Vector2(2.000019, -181.00002)
@@ -198,6 +289,64 @@ I
 O
 N"
 fit_content = true
+
+[node name="cooldown_redacted" type="TextureProgressBar" parent="CanvasLayer/UI" unique_id=1948049768]
+visible = false
+modulate = Color(1, 1, 1, 0.53333336)
+layout_mode = 0
+offset_left = 869.0
+offset_top = 112.0
+offset_right = 933.0
+offset_bottom = 176.0
+scale = Vector2(2, 2)
+theme = ExtResource("6_e35lh")
+value = 100.0
+fill_mode = 3
+texture_under = SubResource("GradientTexture2D_bpcsf")
+texture_over = SubResource("GradientTexture2D_h5hfs")
+texture_progress = SubResource("GradientTexture2D_1wc4g")
+
+[node name="shoot_label" type="Label" parent="CanvasLayer/UI/cooldown_redacted" unique_id=1821551358]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 14.0
+offset_right = 60.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "SHOOT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cooldown" type="TextureProgressBar" parent="CanvasLayer/UI" unique_id=1993421195]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 694.0
+offset_top = -37.0
+offset_right = 821.0
+offset_bottom = -5.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 50.0
+texture_under = SubResource("GradientTexture2D_daj04")
+texture_over = SubResource("GradientTexture2D_mlphb")
+texture_progress = SubResource("GradientTexture2D_3d2pr")
+
+[node name="shoot_label" type="Label" parent="CanvasLayer/UI/cooldown" unique_id=246198858]
+layout_mode = 0
+offset_left = 30.0
+offset_top = -41.0
+offset_right = 109.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 24
+text = "Wait..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="settings" type="Button" parent="CanvasLayer" unique_id=1995971175]
 process_mode = 3

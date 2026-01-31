@@ -1,2 +1,4 @@
 res://game_scene.tscn
-res://Theme/settings.tres
+res://Theme/Shader/clouds_overlay.gdshader
+res://Theme/MainTheme.tres
+res://Scripts/shooter.gd

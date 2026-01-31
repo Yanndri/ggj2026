@@ -1,7 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://cxcisb3oec71x"]
 
 [ext_resource type="FontFile" uid="uid://ulp61nt78wrj" path="res://Art/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_jme7d"]
+[ext_resource type="FontFile" uid="uid://vn8ikwm1d2nk" path="res://Art/Fonts/Noto_Sans_Symbols/static/NotoSansSymbols-Black.ttf" id="2_3kgdn"]
 
 [resource]
 Button/fonts/font = ExtResource("1_jme7d")
+Label/fonts/font = ExtResource("2_3kgdn")
 RichTextLabel/fonts/normal_font = ExtResource("1_jme7d")

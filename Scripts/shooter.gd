@@ -27,6 +27,8 @@ func update_trajectory(delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	%cooldown.visible = false
+	
 	bullet_speed = default_bullet_speed
 	rotate_shooter(3)
 
@@ -50,17 +52,21 @@ func _input(event: InputEvent) -> void:
 		self.scale.x += 0.2
 		self.scale.y = 0.8
 		bullet_speed = default_bullet_speed * (self.scale.x * 5)
-	if Input.is_action_just_released("interact"):
+	if Input.is_action_just_released("interact") and not in_cooldown:
 		shoot(bullet_speed)
+		%cooldown.value = 0
+		%cooldown.visible = true
+		start_cooldown()
 		self.scale.x = 1
 		self.scale.y = 1
-	#if Input.is_action_just_pressed("interact"):
-		#shooter_animations.play("shoot")
-		#if not in_cooldown:
-			#shoot()
-			#start_cooldown()
+		#shoot()
+		
 
 func start_cooldown():
+	var tween = create_tween()
+	
 	in_cooldown = true
+	tween.tween_property(%cooldown, "value", 100, cooldown)
 	await get_tree().create_timer(cooldown).timeout
 	in_cooldown = false
+	%cooldown.visible = false
