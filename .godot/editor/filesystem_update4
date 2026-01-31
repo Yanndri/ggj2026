@@ -1,5 +1,2 @@
 res://game_scene.tscn
-res://Scripts/game_scene.gd
-res://Scripts/shooter.gd
-res://bullet.tscn
-res://Scripts/bullet.gd
+res://Theme/settings.tres

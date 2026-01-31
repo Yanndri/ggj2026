@@ -1,0 +1,23 @@
+[gd_resource type="Theme" format=3 uid="uid://be7cwwl3fvteg"]
+
+[ext_resource type="FontFile" uid="uid://b4h2xfcdopbp6" path="res://Art/Fonts/Noto_Sans_Symbols/static/NotoSansSymbols-ExtraBold.ttf" id="1_agl67"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iubjg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2rfr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_drman"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmeu4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vddxb"]
+
+[resource]
+Button/colors/font_hover_color = Color(0.47058824, 0.4117647, 0.76862746, 1)
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("1_agl67")
+Button/styles/disabled = SubResource("StyleBoxEmpty_iubjg")
+Button/styles/focus = SubResource("StyleBoxEmpty_r2rfr")
+Button/styles/hover = SubResource("StyleBoxEmpty_drman")
+Button/styles/normal = SubResource("StyleBoxEmpty_vmeu4")
+Button/styles/pressed = SubResource("StyleBoxEmpty_vddxb")
