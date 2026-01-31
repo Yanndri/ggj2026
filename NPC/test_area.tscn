@@ -19,11 +19,10 @@ shape = SubResource("RectangleShape2D_ask4l")
 
 [node name="NPC" parent="." unique_id=1276164980 instance=ExtResource("1_gciqn")]
 position = Vector2(391, 182)
-scale = Vector2(0.5, 0.5)
 
 [node name="NPC2" parent="." unique_id=1624658937 instance=ExtResource("1_gciqn")]
 position = Vector2(77, 105)
-scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=480983997]
 position = Vector2(307, 172)
+zoom = Vector2(1.8, 1.8)
