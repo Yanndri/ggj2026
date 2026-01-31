@@ -1,8 +1,2 @@
-<<<<<<< HEAD
 res://game_scene.tscn
-=======
-res://NPC/test_area.tscn
-res://NPC/npc.gd
-res://NPC/NPC.tscn
-res://Managers/game_manager.gd
->>>>>>> fdd9324 (chore: update animation sprite)
+res://Scenes/main_menu.tscn

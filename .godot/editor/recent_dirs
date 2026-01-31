@@ -1,6 +1,7 @@
+res://Scenes/
+res://Scripts/
 res://Assets/PixelClique/BaristaGirl/
 res://Theme/
-res://Scripts/
 res://
 res://addons/Multiplayer/MultiplayerManager/
 res://Managers/
@@ -11,4 +12,3 @@ res://addons/modded_settings/
 res://addons/base_button/
 res://Scripts/StateMachine/
 C:/Users/HP/Documents/Godot Games/mechanics/addons/inputmap/
-res://Scripts/

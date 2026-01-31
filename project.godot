@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Mechanics"
+config/name="GGJ2026"
 run/main_scene="uid://c31ubc02o2ih6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
