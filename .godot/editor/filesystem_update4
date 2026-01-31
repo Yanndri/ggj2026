@@ -1,8 +1,1 @@
-<<<<<<< HEAD
 res://game_scene.tscn
-=======
-res://NPC/test_area.tscn
-res://NPC/npc.gd
-res://NPC/NPC.tscn
-res://Managers/game_manager.gd
->>>>>>> 8b8d7bd (chore: fix npc movement)
