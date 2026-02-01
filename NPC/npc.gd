@@ -49,6 +49,11 @@ func _process(delta: float) -> void:
 		if isStillOnDangerArea: 
 			GameManager.addContaminationProgress()
 			
+func change_to_masked() -> void:
+	for i in sprite_list['unmasked'].size():
+		if sprite_2d.texture == sprite_list['unmasked']['sprite_' + str(i)]:
+			sprite_2d.texture = sprite_list['masked']['sprite_' + str(i)]
+			
 func _move(delta: float) -> void:
 	if Input.is_action_pressed("left_click") and isPickedUp:
 		position = get_global_mouse_position()
