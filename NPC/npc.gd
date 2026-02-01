@@ -8,10 +8,10 @@ var sprite_list: Dictionary = {
 		'sprite_4': preload("res://Assets/PixelClique/GymGirl/GymGirlMovement&Gestures.png"),
 	},
 	'masked': {
-		'sprite_1_masked': preload("res://Assets/BaristaGirlMasked.png"),
-		'sprite_2_masked': preload("res://Assets/BeretGirlMasked.png"),
-		'sprite_3_masked': preload("res://Assets/EmoGirlMasked.png"),
-		'sprite_4_masked': preload("res://Assets/GymGirlMasked.png"),
+		'sprite_1': preload("res://Assets/BaristaGirlMasked.png"),
+		'sprite_2': preload("res://Assets/BeretGirlMasked.png"),
+		'sprite_3': preload("res://Assets/EmoGirlMasked.png"),
+		'sprite_4': preload("res://Assets/GymGirlMasked.png"),
 	}
 }
 
@@ -43,6 +43,7 @@ func _process(delta: float) -> void:
 	_move(delta)
 	_animate_sprite()
 	
+	
 	timeElepsed += delta
 
 	if timeElepsed >= contaminationInterval:
@@ -51,8 +52,8 @@ func _process(delta: float) -> void:
 			
 func change_to_masked() -> void:
 	for i in sprite_list['unmasked'].size():
-		if sprite_2d.texture == sprite_list['unmasked']['sprite_' + str(i)]:
-			sprite_2d.texture = sprite_list['masked']['sprite_' + str(i)]
+		if sprite_2d.texture == sprite_list['unmasked']['sprite_' + str(i+1)]:
+			sprite_2d.texture = sprite_list['masked']['sprite_' + str(i+1)]
 			
 func _move(delta: float) -> void:
 	if Input.is_action_pressed("left_click") and isPickedUp:
