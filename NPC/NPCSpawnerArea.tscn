@@ -4,7 +4,10 @@
 
 [node name="NpcSpawnerArea" type="Node2D" unique_id=273963373]
 script = ExtResource("1_xgyg1")
+spawn_timer = 4
 
-[node name="Area2D" type="Area2D" parent="." unique_id=905037742]
+[node name="NPCSpawnTimer" type="Timer" parent="." unique_id=1573292048]
+wait_time = 5.0
+autostart = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=391741928]
+[connection signal="timeout" from="NPCSpawnTimer" to="." method="_on_npc_spawn_timer_timeout"]

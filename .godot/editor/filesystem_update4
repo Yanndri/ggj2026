@@ -1,4 +1,6 @@
-res://game_scene.tscn
+res://NPC/NPCSpawnerArea.tscn
 res://Theme/Shader/clouds_overlay.gdshader
-res://Theme/MainTheme.tres
-res://Scripts/shooter.gd
+res://NPC/npc_spawner_area.gd
+res://game_scene.tscn
+res://NPC/npc.gd
+res://NPC/NPC.tscn

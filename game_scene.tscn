@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://cyfa1jrf5xwvt" path="res://addons/base_button/click.wav" id="9_j5hk1"]
 [ext_resource type="Script" uid="uid://v5y7slqc7hfb" path="res://addons/modded_settings/settings.gd" id="10_ueiaa"]
 [ext_resource type="PackedScene" uid="uid://c316m6ovwsluh" path="res://Scenes/main_menu.tscn" id="12_mlphb"]
+[ext_resource type="PackedScene" uid="uid://gbh102ff16d7" path="res://NPC/NPCSpawnerArea.tscn" id="14_mlphb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mlphb"]
 shader = ExtResource("2_daj04")
@@ -170,6 +171,9 @@ point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_daj04"]
 colors = PackedColorArray(0, 0.8901961, 1, 0.19215687, 0.22745098, 0.41960785, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opqoc"]
+size = Vector2(1105, 403.5)
 
 [node name="GameScene" type="Node2D" unique_id=2096095640]
 script = ExtResource("1_ueiaa")
@@ -437,6 +441,15 @@ unique_name_in_owner = true
 width = 6.0
 width_curve = SubResource("Curve_daj04")
 gradient = SubResource("Gradient_daj04")
+
+[node name="NpcSpawnerArea" parent="." unique_id=273963373 node_paths=PackedStringArray("spawn_area") instance=ExtResource("14_mlphb")]
+spawn_area = NodePath("Area2D/CollisionShape2D")
+
+[node name="Area2D" type="Area2D" parent="NpcSpawnerArea" unique_id=1272705047]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NpcSpawnerArea/Area2D" unique_id=1347072970]
+position = Vector2(638.5, 279.25)
+shape = SubResource("RectangleShape2D_opqoc")
 
 [connection signal="pressed" from="CanvasLayer/settings" to="CanvasLayer/settings/clickSFX" method="_on_base_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/settings" to="CanvasLayer/settings/Settings" method="_on_settings_pressed"]

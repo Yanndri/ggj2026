@@ -1,13 +1,21 @@
 extends CharacterBody2D
 
 var sprite_list: Dictionary = {
-	'sprite_1': preload("res://Assets/PixelClique/BaristaGirl/BaristaGirlMovement&Gestures.png"),
-	'sprite_2': preload("res://Assets/PixelClique/BeretGirl/BeretGirlMovement&Gestures.png"),
-	'sprite_3': preload("res://Assets/PixelClique/EmoGirl/EmoGirlMovement.png"),
-	'sprite_4': preload("res://Assets/PixelClique/GymGirl/GymGirlMovement&Gestures.png")
+	'unmasked': {
+		'sprite_1': preload("res://Assets/PixelClique/BaristaGirl/BaristaGirlMovement&Gestures.png"),
+		'sprite_2': preload("res://Assets/PixelClique/BeretGirl/BeretGirlMovement&Gestures.png"),
+		'sprite_3': preload("res://Assets/PixelClique/EmoGirl/EmoGirlMovement.png"),
+		'sprite_4': preload("res://Assets/PixelClique/GymGirl/GymGirlMovement&Gestures.png"),
+	},
+	'masked': {
+		'sprite_1_masked': preload("res://Assets/BaristaGirlMasked.png"),
+		'sprite_2_masked': preload("res://Assets/BeretGirlMasked.png"),
+		'sprite_3_masked': preload("res://Assets/EmoGirlMasked.png"),
+		'sprite_4_masked': preload("res://Assets/GymGirlMasked.png"),
+	}
 }
 
-@onready var platform_area: CollisionShape2D = %CollisionShape2D
+@export var platform_area: CollisionShape2D
 @onready var warning_area: Area2D = $WarningArea
 @onready var danger_area: Area2D = $DangerArea
 @onready var direction_cooldown_timer: Timer = $DirectionCooldownTimer
@@ -29,7 +37,7 @@ var platformAreaY
 func _ready() -> void:
 	randomize()
 	_change_direction()
-	sprite_2d.texture = sprite_list.values().pick_random()
+	sprite_2d.texture = sprite_list['unmasked'].values().pick_random()
 
 func _process(delta: float) -> void:
 	_move(delta)
@@ -50,8 +58,8 @@ func _move(delta: float) -> void:
 		position.y = clamp(position.y, 0, platformAreaY)
 		
 		# Change direction if hitting edge
-		if position.x <= 0 or position.x >= platformAreaX or \
-		   position.y <= 0 or position.y >= platformAreaY:
+		if position.x <= 100 or position.x >= platformAreaX or \
+		   position.y <= 100 or position.y >= platformAreaY:
 			_change_direction()
 		
 		position += direction * speed * delta
@@ -59,13 +67,13 @@ func _move(delta: float) -> void:
 func _change_direction() -> void:
 	platformAreaX = platform_area.shape.get_rect().size.x
 	platformAreaY = platform_area.shape.get_rect().size.y
-	direction = Vector2(randi_range(-platformAreaX, platformAreaX), randi_range(-platformAreaY, platformAreaY)).normalized()
+	direction = Vector2(randi_range(-platformAreaX, platformAreaX)+50, randi_range(-platformAreaY, platformAreaY)+50).normalized()
 	direction_cooldown_timer.start()
 	
 func _animate_sprite() -> void:
 	if direction:
 		animation_player.play("run")
-		
+	
 	if direction.x < 0:
 		sprite_2d.flip_h = false
 	elif direction.x > 0:
