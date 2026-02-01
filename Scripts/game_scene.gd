@@ -8,6 +8,7 @@ func _ready() -> void:
 	%settings.visible = true
 	
 	GameManager.score = 0
+	GameManager.contaminationProgress = 0
 
 func start():
 	%NpcSpawnerArea.start()
