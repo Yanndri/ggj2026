@@ -4069,6 +4069,14 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="Title" type="RichTextLabel" parent="Tab/VBoxContainer/PanelContainer" unique_id=620071747]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]STOP THE SREAD"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="PanelContainer2" type="PanelContainer" parent="Tab/VBoxContainer" unique_id=1683837042]
 layout_mode = 2
 size_flags_vertical = 3

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpecia17xgykd"]
+[gd_scene format=3 uid="uid://bpecia17xgykd"]
 
 [ext_resource type="AudioStream" uid="uid://cyfa1jrf5xwvt" path="res://addons/base_button/click.wav" id="1_asr3w"]
 
@@ -9,6 +9,9 @@ script/source = "extends AudioStreamPlayer2D
 func _on_base_button_pressed() -> void:
 	play()
 
+
+func _on_base_button_2_pressed() -> void:
+	play()
 "
 
 [node name="baseButton2" type="Button" unique_id=1770953425]
@@ -21,4 +24,4 @@ stream = ExtResource("1_asr3w")
 bus = &"SFX"
 script = SubResource("GDScript_blluw")
 
-[connection signal="pressed" from="." to="clickSFX" method="_on_base_button_pressed"]
+[connection signal="pressed" from="." to="clickSFX" method="_on_base_button_2_pressed"]

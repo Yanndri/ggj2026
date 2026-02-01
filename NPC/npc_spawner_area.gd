@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var spawn_area: CollisionShape2D 
+@export var spawn_area: Array[CollisionShape2D]
+@export var roaming_area : CollisionShape2D
 @export_range(1, 10) var spawn_timer: int = 2
 @onready var NPC: PackedScene = preload("res://NPC/NPC.tscn")
 
@@ -9,25 +10,22 @@ var center
 var random_x 
 var random_y
 
-
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	
-	if not spawn_area:
+func start() -> void:
+	%NPCSpawnTimer.start()
+	if not spawn_area or not roaming_area:
 		return
 	
 	for i in range(5, 10, 2):
 		spawn_npc()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 func spawn_npc() -> void:
 	randomize()
 	
-	shape = spawn_area.shape.extents
-	center = spawn_area.global_position
+	var chosen_spawn_area : CollisionShape2D = spawn_area.get(randi_range(0, spawn_area.size()-1))
+	shape = chosen_spawn_area.shape.extents
+	center = chosen_spawn_area.global_position
+	
 	random_x = randf_range(center.x - shape.x, center.x + shape.x)
 	random_y = randf_range(center.y - shape.y, center.y + shape.y)
 	
@@ -35,8 +33,8 @@ func spawn_npc() -> void:
 		return
 	
 	var npc = NPC.instantiate()
-	npc.platform_area = spawn_area
-	npc.global_position = Vector2(random_x+50, random_y+50)
+	npc.platform_area = roaming_area
+	npc.global_position = Vector2(random_x, random_y)
 	add_child(npc)
 	
 func _on_npc_spawn_timer_timeout() -> void:

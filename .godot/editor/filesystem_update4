@@ -1,6 +1,10 @@
-res://NPC/NPCSpawnerArea.tscn
-res://Theme/Shader/clouds_overlay.gdshader
-res://NPC/npc_spawner_area.gd
+res://Scripts/shooter.gd
 res://game_scene.tscn
+res://Theme/Shader/clouds_overlay.gdshader
+res://addons/base_button/base_button.tscn
+res://default_bus_layout.tres
+res://Scripts/game_scene.gd
 res://NPC/npc.gd
-res://NPC/NPC.tscn
+res://Managers/game_manager.gd
+res://NPC/NPCSpawnerArea.tscn
+res://Scripts/npc_spawn_timer.gd

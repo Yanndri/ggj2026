@@ -63,3 +63,6 @@ func toggle_display_visibility_menu():
 
 func _on_back_pressed() -> void:
 	show_pause_menu()
+
+func _on_options_pressed() -> void:
+	_on_settings_pressed()

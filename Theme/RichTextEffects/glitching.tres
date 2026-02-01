@@ -1,0 +1,21 @@
+[gd_resource type="RichTextEffect" format=3 uid="uid://dxv8drs14y817"]
+
+[sub_resource type="GDScript" id="GDScript_g7enm"]
+script/source = "@tool
+extends RichTextEffect
+
+var bbcode = \"flicker\"
+var rng := RandomNumberGenerator.new()
+
+func _process_custom_fx(char_fx: CharFXTransform):
+	rng.randomize()
+	var flicker := rng.randf_range(0.0, 1.0)
+	if flicker < 0.5:
+		char_fx.visible = false
+	else:
+		char_fx.visible = true
+	return true
+"
+
+[resource]
+script = SubResource("GDScript_g7enm")

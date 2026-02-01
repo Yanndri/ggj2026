@@ -1,0 +1,8 @@
+[gd_resource type="GradientTexture2D" format=3 uid="uid://lldcgtfk47gy"]
+
+[ext_resource type="Gradient" uid="uid://rgbwnlkuql82" path="res://Theme/contamination_gradient.tres" id="1_gpy31"]
+
+[resource]
+gradient = ExtResource("1_gpy31")
+width = 320
+height = 32

@@ -8,7 +8,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("npc_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +26,7 @@ step = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("npc_sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -45,22 +45,54 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ba72"]
 size = Vector2(12, 18)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gxmj8"]
-radius = 39.20459
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxmj8"]
+radius = 11.999999
+height = 51.99999
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qm8nd"]
-radius = 18.248287
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qm8nd"]
+radius = 8.0
 
-[node name="NPC" type="CharacterBody2D" unique_id=1276164980]
+[sub_resource type="Gradient" id="Gradient_gxmj8"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qm8nd"]
+gradient = SubResource("Gradient_gxmj8")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="GDScript" id="GDScript_6fl5w"]
+resource_name = "warning_tween"
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	TweenUtility.bob_up_and_down(self, 2, 0.2, 0.2)
+"
+
+[sub_resource type="Gradient" id="Gradient_qm8nd"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6fl5w"]
+gradient = SubResource("Gradient_qm8nd")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="NPC" type="CharacterBody2D" unique_id=1276164980 node_paths=PackedStringArray("npc_sprite") groups=["npc"]]
 scale = Vector2(2.5, 2.5)
 input_pickable = true
 script = ExtResource("1_4ba72")
+npc_sprite = NodePath("npc_sprite")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=660844871]
 libraries/ = SubResource("AnimationLibrary_eudjw")
 autoplay = &"run"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=951219259]
+[node name="npc_sprite" type="Sprite2D" parent="." unique_id=951219259]
 texture = ExtResource("2_gxmj8")
 hframes = 5
 vframes = 6
@@ -71,29 +103,76 @@ position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_4ba72")
 
 [node name="WarningArea" type="Area2D" parent="." unique_id=1142415460]
+position = Vector2(0, 13.999999)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WarningArea" unique_id=1403837539]
-shape = SubResource("CircleShape2D_gxmj8")
+rotation = 1.5712773
+shape = SubResource("CapsuleShape2D_gxmj8")
 debug_color = Color(0.65532935, 0.515853, 0.1084558, 0.41960785)
 
 [node name="DangerArea" type="Area2D" parent="." unique_id=1798666083]
+position = Vector2(0, 12.799999)
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DangerArea" unique_id=497913480]
-shape = SubResource("CircleShape2D_qm8nd")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qm8nd")
 debug_color = Color(0.9098187, 0.2814493, 0.26394308, 0.41960785)
 
 [node name="DirectionCooldownTimer" type="Timer" parent="." unique_id=1367488061]
 wait_time = 2.5
 autostart = true
 
+[node name="warning" type="Sprite2D" parent="." unique_id=2074546495]
+unique_name_in_owner = true
+modulate = Color(1, 1, 0, 1)
+position = Vector2(0, -12)
+rotation = 0.7853982
+scale = Vector2(0.1, 0.1)
+texture = SubResource("GradientTexture2D_qm8nd")
+script = SubResource("GDScript_6fl5w")
+
+[node name="warning" type="Sprite2D" parent="warning" unique_id=2081659826]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(12.8492155, 33.93874)
+rotation = 0.7853982
+scale = Vector2(0.4088775, 0.15898292)
+texture = SubResource("GradientTexture2D_qm8nd")
+
+[node name="warning2" type="Sprite2D" parent="warning" unique_id=1942968539]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(24.162918, 22.625034)
+rotation = 0.7853982
+scale = Vector2(0.4088775, 0.15898292)
+texture = SubResource("GradientTexture2D_qm8nd")
+
+[node name="warning3" type="Sprite2D" parent="warning" unique_id=746973322]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(35.476627, 11.311327)
+rotation = 0.7853982
+scale = Vector2(0.4088775, 0.15898292)
+texture = SubResource("GradientTexture2D_qm8nd")
+
+[node name="warning4" type="Sprite2D" parent="warning" unique_id=2003770942]
+position = Vector2(8.485283, -8.485278)
+rotation = 0.7853982
+scale = Vector2(0.4088775, 0.15898292)
+texture = SubResource("GradientTexture2D_6fl5w")
+
+[node name="warning5" type="Sprite2D" parent="warning" unique_id=1706111799]
+position = Vector2(-8.485275, 8.485281)
+rotation = 0.7853982
+scale = Vector2(0.4088775, 0.15898292)
+texture = SubResource("GradientTexture2D_6fl5w")
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="area_entered" from="WarningArea" to="." method="_on_warning_area_area_entered"]
+[connection signal="area_exited" from="WarningArea" to="." method="_on_warning_area_area_exited"]
 [connection signal="area_entered" from="DangerArea" to="." method="_on_danger_area_area_entered"]
 [connection signal="area_exited" from="DangerArea" to="." method="_on_danger_area_area_exited"]
 [connection signal="timeout" from="DirectionCooldownTimer" to="." method="_on_direction_cooldown_timer_timeout"]

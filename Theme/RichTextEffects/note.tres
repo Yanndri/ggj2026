@@ -1,0 +1,40 @@
+[gd_resource type="RichTextEffect" format=3 uid="uid://dd24voy0vavpc"]
+
+[sub_resource type="GDScript" id="GDScript_43avb"]
+script/source = "@tool
+extends RichTextEffect
+
+# Use with [note]Your journal entry[/note]
+var bbcode = \"note\"
+
+# Parameters
+@export var fade_duration: float = 0.5   # seconds per character fade
+@export var char_interval: float = 0.05  # seconds between each character reveal
+@export var ink_color: Color = Color(0.36, 0.25, 0.20) # sepia ink
+
+func _process_custom_fx(char_fx: CharFXTransform) -> bool:
+	# How many characters should be visible so far
+	var chars_visible: int = int(char_fx.elapsed_time / char_interval)
+
+	# Compute fade progress for this character
+	var start_time: float = char_fx.relative_index * char_interval
+	var t: float = clamp((char_fx.elapsed_time - start_time) / fade_duration, 0.0, 1.0)
+
+	# Apply ink color with fade
+	char_fx.color = ink_color
+	char_fx.color.a = t
+
+	# Hide unrevealed characters
+	if t <= 0.0:
+		char_fx.visible = false
+	else:
+		char_fx.visible = true
+
+	return true
+"
+
+[resource]
+script = SubResource("GDScript_43avb")
+fade_duration = 2.0
+char_interval = 0.01
+ink_color = Color(0.1924079, 0.00029398262, 0.5141982, 1)

@@ -3,17 +3,20 @@ extends Sprite2D
 @export var launcher : Marker2D
 @export var bullet_scene : PackedScene
 @export var shooter_animations : AnimationPlayer
-@export var cooldown : float = 0.2
+@export var cooldown : float = 0.5
 @export var default_bullet_speed : float = 100
 
 var in_cooldown : bool
 var bullet_speed : float
 
 var max_points = 10.0
+var speed_multiplier := 5
+
+var shoot_sfx := preload("res://addons/base_button/click.wav")
 
 func _physics_process(delta: float) -> void:
 	update_trajectory(delta)
-	
+
 func update_trajectory(delta):
 	%line.clear_points()
 	#%line.rotation = 
@@ -23,10 +26,11 @@ func update_trajectory(delta):
 		%line.add_point(pos)
 		
 		vel.y += 980 * delta
-		pos += vel * delta * 5
+		pos += vel * delta * speed_multiplier
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	%shoot_button.button_pressed = false
 	%cooldown.visible = false
 	
 	bullet_speed = default_bullet_speed
@@ -44,23 +48,7 @@ func shoot(speed : float):
 
 	# Pass the launcher's facing direction
 	bullet.linear_velocity = -transform.y * speed
-	print("speed: ", speed)
 	bullet_speed = default_bullet_speed
-
-func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("interact"):
-		self.scale.x += 0.2
-		self.scale.y = 0.8
-		bullet_speed = default_bullet_speed * (self.scale.x * 5)
-	if Input.is_action_just_released("interact") and not in_cooldown:
-		shoot(bullet_speed)
-		%cooldown.value = 0
-		%cooldown.visible = true
-		start_cooldown()
-		self.scale.x = 1
-		self.scale.y = 1
-		#shoot()
-		
 
 func start_cooldown():
 	var tween = create_tween()
@@ -70,3 +58,26 @@ func start_cooldown():
 	await get_tree().create_timer(cooldown).timeout
 	in_cooldown = false
 	%cooldown.visible = false
+
+func _on_shoot_button_button_up() -> void:
+	if in_cooldown:
+		return
+	released_shoot()
+	AudioUtility.add_sfx(self, shoot_sfx)
+
+func holding_shoot():
+	self.scale.x += 0.1
+	self.scale.y = 0.8
+	bullet_speed = default_bullet_speed * (self.scale.x * speed_multiplier)
+
+func released_shoot():
+	shoot(bullet_speed)
+	%cooldown.value = 0
+	%cooldown.visible = true
+	start_cooldown()
+	self.scale.x = 1
+	self.scale.y = 1
+
+func _process(_delta: float) -> void:
+	if %shoot_button.button_pressed:
+		holding_shoot()
