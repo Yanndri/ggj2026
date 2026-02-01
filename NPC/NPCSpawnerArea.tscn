@@ -9,7 +9,6 @@ spawn_timer = 4
 
 [node name="NPCSpawnTimer" type="Timer" parent="." unique_id=1573292048]
 unique_name_in_owner = true
-wait_time = 3.0
 script = ExtResource("2_qwyub")
 
 [connection signal="timeout" from="NPCSpawnTimer" to="." method="_on_npc_spawn_timer_timeout"]

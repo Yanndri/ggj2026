@@ -8,3 +8,5 @@ res://NPC/npc.gd
 res://Managers/game_manager.gd
 res://NPC/NPCSpawnerArea.tscn
 res://Scripts/npc_spawn_timer.gd
+res://NPC/NPC.tscn
+res://Scripts/delicacy.gd

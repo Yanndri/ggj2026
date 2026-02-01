@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ct5h78dh1782j" path="res://NPC/npc.gd" id="1_4ba72"]
 [ext_resource type="Texture2D" uid="uid://dywio87myr8sh" path="res://Assets/PixelClique/BaristaGirl/BaristaGirlMovement&Gestures.png" id="2_gxmj8"]
+[ext_resource type="Script" uid="uid://dntcqpgt4ferh" path="res://Scripts/delicacy.gd" id="3_6fl5w"]
+[ext_resource type="Texture2D" uid="uid://xgxd128p1n3m" path="res://Art/Aseprite/delicacy1.png" id="3_qm8nd"]
+[ext_resource type="Texture2D" uid="uid://cveq6lvrstek0" path="res://Art/Aseprite/yakult.png" id="4_eudjw"]
 
 [sub_resource type="Animation" id="Animation_gxmj8"]
 length = 0.001
@@ -81,6 +84,8 @@ gradient = SubResource("Gradient_qm8nd")
 fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fl5w"]
 
 [node name="NPC" type="CharacterBody2D" unique_id=1276164980 node_paths=PackedStringArray("npc_sprite") groups=["npc"]]
 scale = Vector2(2.5, 2.5)
@@ -168,6 +173,18 @@ rotation = 0.7853982
 scale = Vector2(0.4088775, 0.15898292)
 texture = SubResource("GradientTexture2D_6fl5w")
 
+[node name="Delicacy" type="Area2D" parent="." unique_id=487308195]
+unique_name_in_owner = true
+script = ExtResource("3_6fl5w")
+food_textures = Array[CompressedTexture2D]([ExtResource("4_eudjw"), ExtResource("3_qm8nd")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Delicacy" unique_id=1957382403]
+shape = SubResource("CircleShape2D_6fl5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Delicacy" unique_id=699169294]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_qm8nd")
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
@@ -176,3 +193,4 @@ texture = SubResource("GradientTexture2D_6fl5w")
 [connection signal="area_entered" from="DangerArea" to="." method="_on_danger_area_area_entered"]
 [connection signal="area_exited" from="DangerArea" to="." method="_on_danger_area_area_exited"]
 [connection signal="timeout" from="DirectionCooldownTimer" to="." method="_on_direction_cooldown_timer_timeout"]
+[connection signal="input_event" from="Delicacy" to="Delicacy" method="_on_input_event"]

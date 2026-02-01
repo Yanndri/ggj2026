@@ -41,6 +41,10 @@ var got_hit_sfx := preload("res://Art/brackeys_platformer_assets/sounds/hurt.wav
 func _ready() -> void:
 	%warning.visible = false
 	randomize()
+	
+	var random_chance := randi_range(0, 2)
+	if random_chance != 0: %Delicacy.queue_free()
+	
 	_change_direction()
 	
 	var keys = sprite_list["unmasked"].keys() #select a random sprite name from unmasked
@@ -67,6 +71,10 @@ func _process(delta: float) -> void:
 func got_hit():
 	AudioUtility.add_sfx(self, got_hit_sfx)
 	GameManager.score += randi_range(100, 500)
+	
+	if get_node_or_null("%Delicacy"): 
+		%Delicacy.queue_free()
+		GameManager.contaminationProgress -= 10
 	
 	npc_sprite.texture = sprite_list['masked'][sprite_key]
 	set_collision_layer_value(1, false)

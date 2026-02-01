@@ -1,12 +1,12 @@
+CollisionShape2D
+Area2D
+Sprite2D
 RichTextLabel
 Button
 VBoxContainer
 PanelContainer
 Control
-Sprite2D
 Label
-CollisionShape2D
-Area2D
 Timer
 TextureProgressBar
 ProgressBar
